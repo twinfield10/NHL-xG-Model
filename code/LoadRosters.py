@@ -136,7 +136,7 @@ for i in current_game_ids:
 
     pbp_response = requests.get(pbp_link)
     pbp_data = pd.json_normalize(pbp_response.json())
-    pbp_data = pbp_data[~pbp_data['gameType'].isin([1,4,5,6,7,8,12])]
+    pbp_data = pbp_data[~pbp_data['gameType'].isin([1,4,5,6,7,8,9,12])]
 
     ## GAME DATA
     game_data = pbp_data[['id', 'season', 'gameDate', 'gameType', 'awayTeam.id', 'awayTeam.abbrev', 'homeTeam.id', 'homeTeam.abbrev']]
